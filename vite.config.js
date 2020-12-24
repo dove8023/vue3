@@ -1,5 +1,5 @@
 module.exports = {
     optimizeDeps: {
-        include: ["lodash"]
+        // include: ["lodash", "jquery"]
     }
 }

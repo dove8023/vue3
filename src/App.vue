@@ -7,9 +7,19 @@
     @my="sonCallMe"
     msg="Hello Vue 3.0 + Vite"
   />
+
   <hr />
+
   <button @click="loading">Loading Async Component</button>
-  <asyncHello v-if="showAsync" />
+
+  <Suspense v-if="showAsync">
+    <template #default>
+      <asyncHello />
+    </template>
+    <template #fallback>
+      <h1>Loading...</h1>
+    </template>
+  </Suspense>
 </template>
 
 <script>
@@ -54,7 +64,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .border-black {
   border: 1px solid black;
 }

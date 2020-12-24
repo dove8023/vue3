@@ -10,14 +10,12 @@ export default {
     msg: String,
   },
   data() {
-    return {
-      count: 0,
-    };
+    return {};
   },
   methods: {},
 
   mounted() {
-    console.log(123, this.$attrs);
+    // console.log(123, this.$attrs);
   },
 };
 </script>

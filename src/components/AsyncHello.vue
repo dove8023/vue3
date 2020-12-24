@@ -3,11 +3,14 @@
   <p>
     Edit <code>components/HelloWorld.vue</code> to test hot module replacement.
   </p>
+
+  <!-- {{ user.name }} -->
   <Other />
 </template>
 
 <script>
 import Other from "./Other.vue";
+import { sleep } from "../utils";
 
 export default {
   name: "AsyncHello",
@@ -19,8 +22,13 @@ export default {
   },
   data() {
     return {
-      count: 0,
+      user: null,
     };
   },
+  async setup() {
+    await sleep(5000);
+    console.log("sleep over.");
+  },
+  mounted() {},
 };
 </script>
