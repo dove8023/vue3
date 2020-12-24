@@ -15,12 +15,18 @@
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
 import { defineAsyncComponent } from "vue";
+import AsyncError from "./components/AsyncError.vue";
 
 const asyncHello = defineAsyncComponent({
   loader: () => import("./components/AsyncHello.vue"),
-  delay: 3000,
+  delay: 300,
   timeout: 2000,
+  errorComponent: AsyncError,
 });
+
+// const asyncHello = defineAsyncComponent(() =>
+//   import("./components/AsyncHello.vue")
+// );
 
 export default {
   name: "App",

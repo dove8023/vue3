@@ -3,11 +3,17 @@
   <p>
     Edit <code>components/HelloWorld.vue</code> to test hot module replacement.
   </p>
+  <Other />
 </template>
 
 <script>
+import Other from "./Other.vue";
+
 export default {
   name: "AsyncHello",
+  components: {
+    Other,
+  },
   props: {
     msg: String,
   },
@@ -15,11 +21,6 @@ export default {
     return {
       count: 0,
     };
-  },
-  mounted() {
-    setTimeout(() => {
-      this.$emit("my", "ab");
-    }, 3000);
   },
 };
 </script>

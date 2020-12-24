@@ -1,8 +1,6 @@
 <template>
   <h1 v-bind="$attrs">{{ msg }}</h1>
-  <p>
-    Edit <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
+  <p>Edit <code>Code</code> to test vue 3.</p>
 </template>
 
 <script>
@@ -16,10 +14,10 @@ export default {
       count: 0,
     };
   },
+  methods: {},
+
   mounted() {
-    setTimeout(() => {
-      this.$emit("my", "ab");
-    }, 3000);
+    console.log(123, this.$attrs);
   },
 };
 </script>
